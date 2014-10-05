@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Encoding Demo</title>
+    <style>
+        table, th, td {
+            border-collapse: collapse;
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
+    <script src="strmgr.js" charset="UTF-8"></script>
+    <!--<script src="resource.js"></script>-->
+    <!--<script src="resource_es.js"></script>-->
+    <!--<script src="resource_ja.js"></script>-->
+    <script src="resource.js" charset="UTF-8"></script>
+    <script src="resource_es.js" charset="ISO-8859-1"></script>
+    <script src="resource_ja.js" charset="SHIFT-JIS"></script>
+
+</head>
+<body>
+<h1>JavaScript Encoding Demo</h1>
+<table id="terms">
+    <tr><th>Key</th><th>Value</th></tr>
+</table>
+<script>
+    (function() {
+        var keys = StringMgr.getKeys();
+        var tbl = document.getElementById("terms");
+        keys.forEach(function (key) {
+            var value = StringMgr.getString(key);
+            var row = document.createElement("tr");
+            var td1 = document.createElement("td");
+            var td2 = document.createElement("td");
+            var txt1 = document.createTextNode(key);
+            var txt2 = document.createTextNode(value);
+            td1.appendChild(txt1);
+            td2.appendChild(txt2);
+            row.appendChild(td1);
+            row.appendChild(td2);
+            tbl.appendChild(row);
+        });
+    })();
+</script>
+</body>
+</html>
