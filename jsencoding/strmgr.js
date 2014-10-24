@@ -3,16 +3,16 @@
  */
 
 
-var StringMgr = ( function() {
+var StringMgr = (function () {
     var _RESOURCE = {};
 
     function isString(value) {
-        return typeof value == "string" || value instanceof String;
+        return typeof value === "string" || value instanceof String;
     }
 
     function addStrings(map) {
-        Object.keys(map).forEach(function(key) {
-            if(isString(map[key])) {
+        Object.keys(map).forEach(function (key) {
+            if (isString(map[key])) {
                 _RESOURCE[key] = map[key];
             }
         });
@@ -30,5 +30,5 @@ var StringMgr = ( function() {
         addStrings: addStrings,
         getString: getString,
         getKeys: getKeys
-    }
+    };
 })();
