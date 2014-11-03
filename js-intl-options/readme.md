@@ -23,8 +23,6 @@ Considering the features above, you might consider these JavaScript internationa
 * [Globalize.js](https://github.com/jquery/globalize) 
 * [Format.js](http://formatjs.io/)
 * [LibPhoneNumber](https://code.google.com/p/libphonenumber/)
-* [Dojo](http://dojotoolkit.org/documentation/tutorials/1.9/i18n/)
-* [Locale Planet](http://www.localeplanet.com/)
 
 ## EcmaScript Intl Library
 
@@ -42,8 +40,25 @@ The Intl.js library is a poly-fill for the EcmaScript Intl library. It provides 
 
 ## Globalize.js
 
-The Globalize.js library now provides CLDR support. It also provides the expected number, date, and time formatting. However, it
-gives you a couple features that make it 
+The Globalize.js library now provides CLDR support. It also provides the expected number, date, and time formatting. However, it gives you a couple additional features above Intl.js that make it worth considering:
+* message translation
+* pluralization
+
+Message translation is a localization API for common message strings. The library defines a file format for translatable message strings and gives you API for retrieving those strings after translation.
+
+Pluralization is a feature that lets you accommodate the differences in word choice that are needed when word forms depend on their count. For example, the pluralization library let's you conveniently handle word choice for 0, 1, or n number of *mouse* or *mice*. Both Polish and Russian, for example, have several plural forms for 2, 3, 4, 5, or even more instances of a particular noun.
 
 ## Format.js
 
+The Format.js library was recently released by Yahoo. It builds upon the Intl.js library and adds support for the following:
+
+* template libraries like Handlebars, React, and Dust
+* cache support for Intl format objects
+* ICU message syntax for pluralization, gender, and other types of message variability
+* relative time (5 min ago, 2 hours ago, etc)
+
+## libphonenumber
+
+The *libphonenumber* library solves a very specific need for phone number parsing and parsing. Your specific application may not need this, but if it does, you'll find most of what you need with this well-supported library from Google. In addition to JavaScript, the library exists for Java, C++, and other languages. The library helps you parse, format, and validate phone numbers for many countries of the world. Surprisingly, the library also helps you determin the type of  a phone number, for example, fixed-line, mobile, toll-free, etc.
+ 
+ 
