@@ -1,0 +1,9 @@
+/require-lang-demo/target/
+/mavenproject1/target/
+/i18n-collation-demo/target/
+/i18n-collation-demo/nbproject/private/
+/i18n-collation-demo/build/
+/i18n-collation-demo/dist/
+/collation-demo/target/
+/localdate/target/
+/data-format/target/
