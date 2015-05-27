@@ -6,7 +6,7 @@ requirejs.config({
     },
     config: {
         i18n: {
-            locale: "en"
+            locale: "ja"
         }
     }
 });

@@ -122,7 +122,7 @@ If you set the `i18n.locale` configuration option for the `i18n` plugin, Require
 
 In an actual application, you will not hard-code this locale setting. Instead, you will determine your customer's language another way, perhaps using `navigator.language` as a default.
 
-## Access the Resource Bundle
+## Accessing the Resource Bundle
 
 Once things are configured, using the resource bundle is easy. You just have to include it as a module in your `main.js` file. Then, you access each key using the name you give the module.
 
@@ -139,4 +139,23 @@ Once things are configured, using the resource bundle is easy. You just have to 
 In the above case, I've required two modules: jquery and "i18n!nls/text". When you require a module using a plugin, you must append a "!" to the plugin name. After the plugin name, append the root resource bundle path. In this case, even though we have three languages, we point RequireJS to the root bundle. The `i18n` plugin will read the root bundle and discover the additional supported translations.
 
 Since the code uses `text` as the module name, we can retrieve the text values by simply referencing the keys in the bundle. For example, if we want the `quoteTxt`, we reference it with `text.quoteTxt` in our code. The above code uses this technique to populate all the UI text in our simple HTML file. 
+
+## Demonstrating the Plugin
+
+We've setup the environment, configured the plugin, translated a file, and have modified our application so that it pulls translated text from the bundles. Now let's see this work. You shouldn't need any additional files or tools. Just point your browser to the `index-after.html` file on your local drive. If you've not changed anything, you should see the following English content:
+
+![English Text](imgs/quote-en.png)
+
+Now if you update the `main.js` file and change the i18n.locale setting to `ja`, you will see the next image. Remember, this is not a professional translation and is only used for an example.
+
+![Japanese Text](imgs/quote-ja.png)
+
+## Concluding
+
+Although JavaScript has no predefined framework for providing translatable resources, it is reasonably easy to use a library like the RequireJS `i18n` plugin to help manage UI text strings. Interestingly, the Dojo libraries work similarly to RequireJS. So, if you're using Dojo, you will be manage translations in your application in much the same way.
+
+Unfortunately, one of the most interesting parts of JavaScript internationalization is the question of how to determine the user's preferred language. I've written about this before, so instead of handling that question here, I'll refer you to [Language Signals on the Web](http://joconner.com/2012/02/language-signals-web/).
+
+Good luck in your internationalization efforts. Like anything else, the hardest part is just getting started. Hopefully this article makes that first step easier.
+
 
