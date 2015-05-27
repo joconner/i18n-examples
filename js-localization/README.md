@@ -1,5 +1,7 @@
 # Localizing JavaScript UI Text with RequireJS
 
+![Old world map](imgs/old-world-map.jpg)
+
 Internationalizing a web application includes the task of extracting user interface text for translations. When text is separated from the rest of your application business logic, you are able to localize and translate it easier. Although the JavaScript language and browser environment don't prescribe any particular method for creating externalized text resources, many libraries exist to help this effort. One such library is [RequireJS](http://requirejs.org). The library includes an `i18n` plugin that helps you organize your text resources and load them at runtime depending on the needed language. The goal of this article is to describe how to use the RequireJS `i18n` plugin on a simple, single page application. 
 
 This sample application has a single html file `index-before.html` that contains text headers and other UI elements. We will  extract the text, put it into a separate resource file, translate that file, and use the translatable files at runtime as needed by the customer's language.
